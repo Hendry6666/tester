@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Bot</title>
+<style>
+    #dvUser{
+        text-align: right;
+    }
+    #dvContent{
+        width:80vw;
+        margin: 15px auto;
+    }
+    .wrapper, .wrapperTodo{
+        margin: 16px 8px;
+        border: black 1px solid;
+    }
+    .wrapperTodo{
+        height:40px;
+        color:gainsboro;
+    }
+    .title{
+        background-color:darkmagenta;
+        color:white;
+        text-align: center;
+    }
+    .todotitle{
+        padding:5px 15px;
+    }
+    .wrapperTodo.red{
+        background-color: crimson;
+    }
+    .wrapperTodo.green{
+        background-color: forestgreen;
+    }
+    .body, .comment{
+        padding:8px 16px;
+        background-color: darkgray;
+    }
+    .comment{
+        cursor:pointer;
+        text-align: center;
+    }
+    .logoutLink{
+        cursor: pointer;
+        color:blue;
+    }
+    .wrapperComment{
+        width:100%;
+        margin:6px 0;
+    }
+    .emailComment{
+        border:solid 1px black;
+        background-color: honeydew;
+        padding: 2px 8px;
+    }
+    .bodyComment{
+        padding: 2px 8px;
+        border-bottom: black solid 1px;
+        border-left: solid 1px black;
+        border-right: 1px solid black;
+    }
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/util.js"></script>
+</head>
+
+<body>
+    <div id="dvUser"></div>
+    <div id="dvContent">
+        <div id="dvPosts"></div>
+        <div id="dvTodos"></div>
+    </div>
+    <div id="myModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Komentar</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="dvModalBody">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script type="text/javascript">
+        checkSession();
+    </script>
+</body>
+</html>
